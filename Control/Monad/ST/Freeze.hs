@@ -44,7 +44,8 @@ module Control.Monad.ST.Freeze (
 import           Control.Applicative
 import           Control.Monad
 import           Control.Monad.Identity(Identity(..))
-import qualified Control.Monad.ST as S
+import qualified Control.Monad.ST as S (ST)
+import qualified Control.Monad.ST.Unsafe as S
 import           Control.Monad.Indexed(IxMonad(..),IxFunctor(..),IxPointed(..),IxApplicative(..))
 import           System.IO.Unsafe
 
@@ -80,7 +81,7 @@ class IxMonad st => MonadST st where
 -- Defining 'STT' as a monad transformer rather than just a monad
 -- allows ST arrays to be used in the 'IO' monad, bringing safe
 -- freezing also to the 'IO' monad.
-newtype STT m s t a = STT { unSTT :: IO a }
+newtype STT (m :: * -> *) s t a = STT { unSTT :: IO a }
 
 class STTBase m where
     -- | Runs the monad
