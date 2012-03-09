@@ -2,6 +2,7 @@ Name:          safe-freeze
 Version:       0.1
 Synopsis:      Support for safely freezing multiple arrays in the ST monad.
 License:       BSD3
+License-file:  LICENSE
 Author:        Reiner Pope <reiner.pope@gmail.com>
 Maintainer:    Reiner Pope <reiner.pope@gmail.com>
 Stability:     experimental
@@ -20,6 +21,12 @@ Category:      Data
 Tested-with:   
 Cabal-Version: >= 1.6
 Build-type:    Simple
+homepage:            https://github.com/reinerp/safe-freeze
+bug-reports:         https://github.com/reinerp/safe-freeze/issues
+
+source-repository head
+  type:                 git
+  location:             git://github.com/reinerp/safe-freeze.git
 
 Library
   Exposed-Modules: 
@@ -38,5 +45,3 @@ Library
     indexed < 0.2,
     mtl == 2.0.*,
     vector>=0.4 && < 0.10
-
-
