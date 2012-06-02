@@ -1,5 +1,5 @@
 Name:          safe-freeze
-Version:       0.2
+Version:       0.2.1
 Synopsis:      Support for safely freezing multiple arrays in the ST monad.
 License:       BSD3
 License-file:  LICENSE
